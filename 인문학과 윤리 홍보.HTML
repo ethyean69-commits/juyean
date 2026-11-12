@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인문학과 윤리 | 선택과목 안내</title>
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Pretendard', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#1e1b4b',
+                            900: '#0f172a',
+                            950: '#0b0f19',
+                        },
+                        brand: {
+                            coral: '#ff6b6b',
+                            teal: '#0d9488',
+                            tealLight: '#ccfbf1',
+                            indigo: '#4f46e5',
+                            indigoLight: '#e0e7ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            word-break: keep-all;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+        }
+        .coral-gradient {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+        }
+        .teal-gradient {
+            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-rose-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5 font-bold text-lg sm:text-xl text-slate-900">
+                <span class="w-8 h-8 rounded-lg teal-gradient flex items-center justify-center text-white text-sm shadow-md">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                </span>
+                <span>인문학과 윤리</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#about" class="hover:text-teal-600 transition-colors">과목 소개</a>
+                <a href="#activities" class="hover:text-teal-600 transition-colors">수업 활동</a>
+                <a href="#recommend" class="hover:text-teal-600 transition-colors">추천 대상</a>
+                <a href="#notice" class="hover:text-teal-600 transition-colors">알아두기</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button onclick="bookmarkSubject()" class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-rose-500 bg-rose-50 hover:bg-rose-100 border border-rose-200 px-4 py-2 rounded-full transition-all duration-200 active:scale-95">
+                    <i class="fa-regular fa-heart"></i>
+                    <span>관심 과목 담기</span>
+                </button>
+                <a href="#recommend" class="inline-flex items-center gap-2 text-sm font-semibold text-white teal-gradient hover:opacity-90 px-4 py-2 rounded-full shadow-sm transition-all duration-200">
+                    <span>적합도 테스트</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- 1. HERO SECTION -->
+        <section class="gradient-bg text-white relative overflow-hidden py-20 lg:py-28">
+            <!-- Decorative circles -->
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-rose-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-3xl mx-auto text-center space-y-6">
+                    
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-teal-300 text-xs sm:text-sm font-medium">
+                        <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+                        융합적 사고를 키우는 선택과목
+                    </div>
+
+                    <!-- Main Title (Strictly as requested) -->
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+                        인문학과 윤리, <br class="hidden sm:inline">
+                        <span class="bg-gradient-to-r from-teal-300 via-emerald-200 to-rose-300 bg-clip-text text-transparent">함께 배워볼까요?</span>
+                    </h1>
+
+                    <!-- One-line Intro (Strictly as requested) -->
+                    <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
+                        인문학을 통해 윤리를 학습하고 삶에 적용하는 수업입니다.
+                    </p>
+
+                    <!-- Quick Highlights & CTA -->
+                    <div class="pt-4 flex flex-wrap justify-center gap-3 text-xs sm:text-sm">
+                        <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5">
+                            <i class="fa-solid fa-brain text-teal-400"></i> 윤리학 기본 개념
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5">
+                            <i class="fa-solid fa-microchip text-rose-400"></i> AI & 데이터 윤리
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5">
+                            <i class="fa-solid fa-laptop-code text-indigo-400"></i> 실습 및 프로젝트
+                        </span>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="pt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="#about" class="w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-white coral-gradient shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:-translate-y-0.5 transition-all text-center">
+                            과목 자세히 보기
+                        </a>
+                        <a href="#recommend" class="w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-slate-200 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all text-center">
+                            나에게 맞을까? 체크하기
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SUBJECT OVERVIEW SECTION -->
+        <section id="about" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-teal-600 font-bold text-sm tracking-wider uppercase">Subject Overview</span>
+                    <h2 class="text-3xl font-bold text-slate-900 mt-2">무엇을 배우나요?</h2>
+                    <p class="text-slate-600 mt-3">철학적 사유와 미래 기술이 결합된 시대를 살아가기 위한 윤리적 통찰력을 배웁니다.</p>
+                </div>
+
+                <!-- 2 Main Cards (Strict content inclusion) -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <!-- Card 1 -->
+                    <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-teal-300 hover:shadow-xl hover:shadow-teal-500/5 transition-all duration-300 relative overflow-hidden flex flex-col justify-between">
+                        <div class="absolute top-0 left-0 w-2 h-full bg-teal-500 rounded-l-2xl"></div>
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                            <span class="text-xs font-bold text-teal-600 bg-teal-50 border border-teal-200 px-2.5 py-1 rounded-full uppercase">Point 01</span>
+                            <h3 class="text-2xl font-bold text-slate-900 mt-3 mb-4">윤리학의 기본 개념 탐구</h3>
+                            <p class="text-slate-700 leading-relaxed font-medium text-lg">
+                                윤리학의 기본 개념을 배웁니다.
+                            </p>
+                            <p class="text-slate-500 text-sm mt-3 leading-relaxed">
+                                인간의 삶, 가치관, 그리고 올바른 선택에 대한 동서양 철학 사상의 기초를 이해하며 스스로 생각하는 인문학적 힘을 기릅니다.
+                            </p>
+                        </div>
+                        <div class="mt-8 pt-4 border-t border-slate-200/60 flex items-center gap-2 text-xs text-slate-500 font-medium">
+                            <i class="fa-solid fa-check text-teal-500"></i> 사상가들의 윤리적 질문과 대화하기
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-500/5 transition-all duration-300 relative overflow-hidden flex flex-col justify-between">
+                        <div class="absolute top-0 left-0 w-2 h-full bg-rose-500 rounded-l-2xl"></div>
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <span class="text-xs font-bold text-rose-600 bg-rose-50 border border-rose-200 px-2.5 py-1 rounded-full uppercase">Point 02</span>
+                            <h3 class="text-2xl font-bold text-slate-900 mt-3 mb-4">데이터 & AI 윤리 문제 해결</h3>
+                            <p class="text-slate-700 leading-relaxed font-medium text-lg">
+                                데이터를 활용하고 인공지능으로 윤리 문제를 해결하는 방법을 알아봅니다.
+                            </p>
+                            <p class="text-slate-500 text-sm mt-3 leading-relaxed">
+                                자율주행, 생성형 AI, 데이터 편향성 등 현대 사회의 첨단 기술 이슈를 데이터 관점에서 분석하고 현실적인 윤리적 솔루션을 모색합니다.
+                            </p>
+                        </div>
+                        <div class="mt-8 pt-4 border-t border-slate-200/60 flex items-center gap-2 text-xs text-slate-500 font-medium">
+                            <i class="fa-solid fa-check text-rose-500"></i> 미래 기술 사회를 이끄는 윤리적 조율자
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CLASS ACTIVITIES PREVIEW SECTION -->
+        <section id="activities" class="py-20 bg-slate-50 border-y border-slate-200/60">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-indigo-600 font-bold text-sm tracking-wider uppercase">Class Activities</span>
+                    <h2 class="text-3xl font-bold text-slate-900 mt-2">수업 활동 미리보기</h2>
+                    <p class="text-slate-600 mt-3">이론 탐구부터 직접 만들고 적용해보는 실천적 활동까지 진행됩니다.</p>
+                </div>
+
+                <!-- 3 Activity Cards (Strict Content) -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Activity 1 -->
+                    <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <span class="w-10 h-10 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-sm shadow">
+                                    01
+                                </span>
+                                <span class="text-xs font-semibold text-slate-400 bg-slate-100 px-3 py-1 rounded-full">탐구 및 사례 분석</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors">
+                                생활 속 인문학적 윤리 사상 적용 사례 찾기
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                영화, 뉴스, SNS 등 우리 일상 속 다양한 이슈에서 인문학적 윤리 사상이 작동하는 흥미로운 사례들을 수집하고 분석합니다.
+                            </p>
+                        </div>
+                        <div class="bg-teal-50/70 p-3.5 rounded-xl border border-teal-100 flex items-center gap-3">
+                            <i class="fa-solid fa-magnifying-glass text-teal-600 text-lg"></i>
+                            <span class="text-xs font-medium text-teal-900">일상 문제 발굴 및 비판적 사고</span>
+                        </div>
+                    </div>
+
+                    <!-- Activity 2 -->
+                    <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <span class="w-10 h-10 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-sm shadow">
+                                    02
+                                </span>
+                                <span class="text-xs font-semibold text-slate-400 bg-slate-100 px-3 py-1 rounded-full">디자인 & 모델링</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">
+                                현대사회의 적용 윤리 모델 만들기
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                딜레마 상황을 해결할 수 있는 자신만의 윤리 가이드라인 및 알고리즘 의사결정 모델을 직접 설계하고 시각화합니다.
+                            </p>
+                        </div>
+                        <div class="bg-indigo-50/70 p-3.5 rounded-xl border border-indigo-100 flex items-center gap-3">
+                            <i class="fa-solid fa-diagram-project text-indigo-600 text-lg"></i>
+                            <span class="text-xs font-medium text-indigo-900">의사결정 프레임워크 구축</span>
+                        </div>
+                    </div>
+
+                    <!-- Activity 3 -->
+                    <div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-200 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <span class="w-10 h-10 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-sm shadow">
+                                    03
+                                </span>
+                                <span class="text-xs font-semibold text-slate-400 bg-slate-100 px-3 py-1 rounded-full">프로젝트 실천</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-rose-600 transition-colors">
+                                윤리 사상을 활용한 프로젝트 진행하기
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                팀원들과 함께 구체적인 사회 문제나 기술 윤리 주제를 선정하여 창의적인 프로젝트 아이디어를 구현하고 발표합니다.
+                            </p>
+                        </div>
+                        <div class="bg-rose-50/70 p-3.5 rounded-xl border border-rose-100 flex items-center gap-3">
+                            <i class="fa-solid fa-rocket text-rose-600 text-lg"></i>
+                            <span class="text-xs font-medium text-rose-900">팀 협업 및 결과물 발표</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. RECOMMENDED STUDENTS SECTION & INTERACTIVE CHECKLIST -->
+        <section id="recommend" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                    <!-- Background Accent Glow -->
+                    <div class="absolute top-0 right-0 w-80 h-80 bg-rose-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="text-center mb-10">
+                        <span class="px-3.5 py-1 rounded-full bg-rose-500/20 text-rose-300 text-xs font-bold border border-rose-500/30">Target Student Self-Check</span>
+                        <h2 class="text-2xl sm:text-4xl font-bold mt-3">이런 학생에게 추천해요!</h2>
+                        <p class="text-slate-300 text-sm sm:text-base mt-2">아래 항목 중 나에게 해당하는 부분에 체크해보세요.</p>
+                    </div>
+
+                    <!-- Checklist Cards -->
+                    <div class="space-y-4 max-w-2xl mx-auto">
+                        
+                        <!-- Check Item 1 -->
+                        <label class="flex items-start gap-4 p-5 rounded-2xl bg-white/10 border border-white/10 hover:bg-white/15 cursor-pointer transition-all duration-200 select-none">
+                            <input type="checkbox" onchange="updateChecklist()" class="recommend-check mt-1 w-5 h-5 rounded border-slate-400 text-rose-500 focus:ring-rose-500 accent-rose-500">
+                            <div>
+                                <span class="font-semibold text-base sm:text-lg block text-white">
+                                    자신의 철학과 인생의 목표를 어떻게 세워야 하는 지 궁금한 학생
+                                </span>
+                                <span class="text-xs sm:text-sm text-slate-300 mt-1 block">
+                                    "내가 중요하게 생각하는 가치는 무엇일까?" 인생의 방향성을 찾고 고유한 철학을 세우고 싶은 학생
+                                </span>
+                            </div>
+                        </label>
+
+                        <!-- Check Item 2 -->
+                        <label class="flex items-start gap-4 p-5 rounded-2xl bg-white/10 border border-white/10 hover:bg-white/15 cursor-pointer transition-all duration-200 select-none">
+                            <input type="checkbox" onchange="updateChecklist()" class="recommend-check mt-1 w-5 h-5 rounded border-slate-400 text-rose-500 focus:ring-rose-500 accent-rose-500">
+                            <div>
+                                <span class="font-semibold text-base sm:text-lg block text-white">
+                                    직접 만들고 체험하는 활동을 좋아하는 학생
+                                </span>
+                                <span class="text-xs sm:text-sm text-slate-300 mt-1 block">
+                                    단순 암기식 수업에서 벗어나 모형 만들기, 토론, 프로젝트 등 역동적인 수업을 선호하는 학생
+                                </span>
+                            </div>
+                        </label>
+
+                        <!-- Check Item 3 -->
+                        <label class="flex items-start gap-4 p-5 rounded-2xl bg-white/10 border border-white/10 hover:bg-white/15 cursor-pointer transition-all duration-200 select-none">
+                            <input type="checkbox" onchange="updateChecklist()" class="recommend-check mt-1 w-5 h-5 rounded border-slate-400 text-rose-500 focus:ring-rose-500 accent-rose-500">
+                            <div>
+                                <span class="font-semibold text-base sm:text-lg block text-white">
+                                    기술을 활용해 문제를 해결해보고 싶은 학생
+                                </span>
+                                <span class="text-xs sm:text-sm text-slate-300 mt-1 block">
+                                    인공지능, 빅데이터 등 최신 기술에 관심이 많고 이를 윤리적 관점에서 다뤄보고 싶은 학생
+                                </span>
+                            </div>
+                        </label>
+
+                    </div>
+
+                    <!-- Dynamic Score Result Gauge -->
+                    <div id="check-result-box" class="mt-8 pt-6 border-t border-white/10 text-center max-w-2xl mx-auto">
+                        <div class="flex items-center justify-between text-xs text-slate-300 mb-2">
+                            <span>나의 적합도</span>
+                            <span id="match-score-text" class="font-bold text-rose-300">0% 선택됨</span>
+                        </div>
+                        <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden p-0.5 border border-white/10">
+                            <div id="match-score-bar" class="coral-gradient h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <p id="match-message" class="text-sm font-medium text-slate-300 mt-3">
+                            위의 체크박스를 눌러 나의 흥미를 확인해 보세요!
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. BEFORE TAKING CLASS SECTION -->
+        <section id="notice" class="py-20 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-teal-600 font-bold text-sm tracking-wider uppercase">Check Before Class</span>
+                    <h2 class="text-3xl font-bold text-slate-900 mt-2">수강 전 알아두기</h2>
+                    <p class="text-slate-600 mt-3">수업을 들을 때 꼭 알아두어야 할 세 가지 포인트입니다.</p>
+                </div>
+
+                <!-- 3 Notice Cards (Strict Content) -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    
+                    <!-- Notice 1 -->
+                    <div class="bg-white p-7 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">코딩 부담 zero</h3>
+                        <p class="text-slate-700 font-semibold text-base leading-relaxed">
+                            코딩을 처음 접하는 학생도 참여할 수 있습니다.
+                        </p>
+                        <p class="text-slate-500 text-xs mt-3 leading-normal">
+                            어려운 프로그래밍 기술을 요구하지 않습니다. 노코드 툴과 쉬운 가이드를 활용해 누구나 쉽게 시작할 수 있습니다.
+                        </p>
+                    </div>
+
+                    <!-- Notice 2 -->
+                    <div class="bg-white p-7 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-hands-holding-circle"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">참여형 실습 수업</h3>
+                        <p class="text-slate-700 font-semibold text-base leading-relaxed">
+                            실습과 프로젝트 중심으로 수업합니다.
+                        </p>
+                        <p class="text-slate-500 text-xs mt-3 leading-normal">
+                            일방적인 주입식 강의가 아니라, 직접 아이디어를 내고 탐구하며 만들어가는 유연하고 흥미진진한 실습이 펼쳐집니다.
+                        </p>
+                    </div>
+
+                    <!-- Notice 3 -->
+                    <div class="bg-white p-7 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">투명한 평가 방식</h3>
+                        <p class="text-slate-700 font-semibold text-base leading-relaxed">
+                            평가 방법은 수업 시작 시 안내합니다.
+                        </p>
+                        <p class="text-slate-500 text-xs mt-3 leading-normal">
+                            평가 기준, 과정 중심 평가 요소 및 프로젝트 안내사항은 학기 초 오리엔테이션 시간에 명확하게 제공됩니다.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="py-16 bg-white border-t border-slate-200/60">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <h3 class="text-2xl font-bold text-center text-slate-900 mb-8">자주 묻는 질문 (FAQ)</h3>
+                
+                <div class="space-y-4">
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <button onclick="toggleFaq(1)" class="w-full flex justify-between items-center p-5 text-left font-semibold text-slate-800 bg-slate-50 hover:bg-slate-100 transition-colors">
+                            <span>Q. 문과/이과 상관없이 수강할 수 있나요?</span>
+                            <i id="faq-icon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                        </button>
+                        <div id="faq-content-1" class="hidden p-5 text-sm text-slate-600 border-t border-slate-200 bg-white leading-relaxed">
+                            네! 인문학적 사고(인문 계열)와 AI·데이터 기술(자연 계열)을 두루 다루기 때문에 계열 구분 없이 자신의 진로와 연계하여 깊이 있는 생기부를 만들어갈 수 있습니다.
+                        </div>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <button onclick="toggleFaq(2)" class="w-full flex justify-between items-center p-5 text-left font-semibold text-slate-800 bg-slate-50 hover:bg-slate-100 transition-colors">
+                            <span>Q. 코딩이나 컴퓨터를 잘 못해도 프로젝트를 잘할 수 있나요?</span>
+                            <i id="faq-icon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                        </button>
+                        <div id="faq-content-2" class="hidden p-5 text-sm text-slate-600 border-t border-slate-200 bg-white leading-relaxed">
+                            물론입니다. 프로젝트의 핵심은 '기술적인 코딩'이 아니라 '윤리적 문제를 발굴하고 해결 아이디어를 도출하는 사고력'입니다. 기초적인 툴 사용법을 친절히 안내합니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA / CALL TO ACTION -->
+        <section class="py-16 gradient-bg text-white text-center">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-3xl font-extrabold mb-4">함께 더 나은 미래 윤리를 만들어갈 여러분을 기다립니다!</h2>
+                <p class="text-slate-300 mb-8 max-w-xl mx-auto text-sm sm:text-base">
+                    인문학과 윤리 수업에서 여러분의 넓은 시야와 깊이 있는 생각을 펼쳐보세요.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="bookmarkSubject()" class="px-8 py-3.5 rounded-xl font-bold coral-gradient shadow-lg hover:shadow-rose-500/30 hover:-translate-y-0.5 transition-all">
+                        <i class="fa-solid fa-heart mr-2"></i>관심 과목으로 등록하기
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs sm:text-sm">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-2">
+            <p class="font-medium text-slate-300">선택과목 홍보 웹페이지 — 인문학과 윤리</p>
+            <p class="text-slate-500">© 2026 Curriculum Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Box -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl border border-slate-700 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-rose-500 flex items-center justify-center text-white">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+                <p class="font-bold text-sm" id="toast-title">관심 과목에 담겼습니다!</p>
+                <p class="text-xs text-slate-300">수강 신청 기간에 잊지 말고 신청하세요.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Checklist scoring logic
+        function updateChecklist() {
+            const checkboxes = document.querySelectorAll('.recommend-check');
+            let checkedCount = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) checkedCount++;
+            });
+
+            const percent = Math.round((checkedCount / checkboxes.length) * 100);
+            const scoreBar = document.getElementById('match-score-bar');
+            const scoreText = document.getElementById('match-score-text');
+            const message = document.getElementById('match-message');
+
+            scoreBar.style.width = percent + '%';
+            scoreText.textContent = percent + '% 적합';
+
+            if (checkedCount === 0) {
+                message.textContent = '위의 체크박스를 눌러 나의 흥미를 확인해 보세요!';
+                message.className = 'text-sm font-medium text-slate-300 mt-3';
+            } else if (checkedCount === 1) {
+                message.textContent = '💡 흥미로운 시작이네요! 과목 소개를 더 살펴보세요.';
+                message.className = 'text-sm font-medium text-teal-300 mt-3';
+            } else if (checkedCount === 2) {
+                message.textContent = '✨ 이 과목과 궁합이 아주 잘 맞는 학생입니다!';
+                message.className = 'text-sm font-medium text-indigo-300 mt-3';
+            } else if (checkedCount === 3) {
+                message.textContent = '🚀 완벽해요! [인문학과 윤리]는 당신을 위해 준비된 수업입니다.';
+                message.className = 'text-sm font-medium text-rose-300 font-bold mt-3 animate-bounce';
+            }
+        }
+
+        // Bookmark simulation toast
+        function bookmarkSubject() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Accordion FAQ toggle logic
+        function toggleFaq(index) {
+            const content = document.getElementById(`faq-content-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인문학과 윤리 - 선택과목 안내</title>
+  <style>
+    /* =========================================
+       [1] 전체 디자인 및 색상 설정 (수정 가능)
+       ========================================= */
+    :root {
+      --bg-sky: #e8f4fc;          /* 전체 배경색: 연한 하늘색 */
+      --box-white: #ffffff;       /* 내용 상자 배경색: 흰색 */
+      --primary-blue: #1e40af;    /* 강조 포인트 색상: 진한 파란색 */
+      --accent-sky: #0284c7;      /* 보조 강조 색상: 선명한 하늘색 */
+      --text-dark: #1e293b;       /* 기본 본문 글자색 */
+      --text-gray: #475569;       /* 보조 설명 글자색 */
+      --border-light: #cbd5e1;    /* 테두리 연한 회색 */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', '맑은 고딕', sans-serif;
+      background-color: var(--bg-sky);
+      color: var(--text-dark);
+      line-height: 1.7;
+      font-size: 18px; /* 크고 읽기 쉬운 본문 글자 크기 */
+      padding: 32px 16px;
+    }
+
+    /* 전체 내용을 감싸는 중앙 정렬 틀 */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* =========================================
+       [2] 상단 메인 제목 영역
+       ========================================= */
+    .header-box {
+      background: linear-gradient(135deg, #1d4ed8 0%, #0284c7 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 48px 28px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.18);
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-box h1 {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      word-break: keep-all;
+    }
+
+    .header-box p {
+      font-size: 20px;
+      font-weight: 400;
+      opacity: 0.95;
+      word-break: keep-all;
+    }
+
+    /* =========================================
+       [3] 흰색 내용 상자 (섹션별 구분)
+       ========================================= */
+    .card {
+      background-color: var(--box-white);
+      border-radius: 18px;
+      padding: 34px 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary-blue);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e0f2fe;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* 목록 스타일 */
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 14px;
+      font-size: 19px;
+      word-break: keep-all;
+    }
+
+    .info-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent-sky);
+      font-weight: bold;
+    }
+
+    /* =========================================
+       [4] 수업 활동 미리보기 & 사진 갤러리
+       ========================================= */
+    .activity-list {
+      margin-bottom: 28px;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* PC/태블릿: 한 줄에 3장 */
+      gap: 20px;
+    }
+
+    .photo-item {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .photo-item:hover {
+      transform: translateY(-4px);
+    }
+
+    /* 사진 비율이 찌그러지지 않도록 4:3 비율 고정 및 맞춤 처리 */
+    .photo-frame {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background-color: #e2e8f0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 비율을 유지하면서 프레임에 꽉 차게 배치 */
+      display: block;
+    }
+
+    .photo-caption {
+      padding: 14px 10px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+      background-color: #ffffff;
+    }
+
+    /* 하단 안내 문구 */
+    .footer {
+      text-align: center;
+      color: var(--text-gray);
+      font-size: 15px;
+      margin-top: 12px;
+      padding-bottom: 20px;
+    }
+
+    /* =========================================
+       [5] 모바일 화면 맞춤 설정 (폭 768px 이하)
+       ========================================= */
+    @media (max-width: 768px) {
+      body {
+        padding: 18px 12px;
+        font-size: 17px;
+      }
+
+      .header-box {
+        padding: 36px 20px;
+      }
+
+      .header-box h1 {
+        font-size: 28px;
+      }
+
+      .header-box p {
+        font-size: 18px;
+      }
+
+      .card {
+        padding: 24px 20px;
+      }
+
+      .section-title {
+        font-size: 21px;
+      }
+
+      .info-list li {
+        font-size: 17px;
+      }
+
+      /* 휴대폰에서는 사진을 한 줄에 한 장씩 표시 */
+      .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ==========================================================
+         [상단 제목 및 한 줄 소개] - 문구를 바꾸려면 아래 텍스트를 수정하세요.
+         ========================================================== -->
+    <header class="header-box">
+      <div class="badge">고등학교 선택과목 안내</div>
+      <h1>인문학과 윤리, 함께 배워볼까요?</h1>
+      <p>인문학을 통해 윤리를 학습하고 삶에 적용하는 수업입니다.</p>
+    </header>
+
+    <!-- ==========================================================
+         [섹션 1] 과목 소개
+         ========================================================== -->
+    <section class="card">
+      <h2 class="section-title">📚 과목 소개</h2>
+      <ul class="info-list">
+        <li>윤리학의 기본 개념을 배웁니다.</li>
+        <li>데이터를 활용하고 인공지능으로 윤리 문제를 해결하는 방법을 알아봅니다.</li>
+      </ul>
+    </section>
+
+    <!-- ==========================================================
+         [섹션 2] 수업 활동 미리보기 & 사진
+         ========================================================== -->
+    <section class="card">
+      <h2 class="section-title">🔍 수업 활동 미리보기</h2>
+      <ul class="info-list activity-list">
+        <li>생활 속 인문학적 윤리 사상 적용 사례 찾기</li>
+        <li>현대사회의 적용 윤리 모델 만들기</li>
+        <li>윤리 사상을 활용한 프로젝트 진행하기</li>
+      </ul>
+
+      <!-- 
+        [사진 파일 안내]
+        - 이 HTML 파일과 같은 폴더에 photo1, photo2, photo3 파일을 넣어주세요.
+        - 확장자가 .jpg, .jpeg, .png 중 무엇이든 자동으로 찾아서 보여줍니다.
+        - 다른 파일 이름을 쓰고 싶다면 data-base="photo1" 부분을 원하는 이름으로 바꾸세요.
+      -->
+      <div class="photo-grid">
+        <!-- 사진 1 -->
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img class="auto-img" data-base="photo1" alt="윤리사상 탐구 활동 사진">
+          </div>
+          <p class="photo-caption">윤리사상 탐구</p>
+        </div>
+
+        <!-- 사진 2 -->
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img class="auto-img" data-base="photo2" alt="모둠 프로젝트 활동 사진">
+          </div>
+          <p class="photo-caption">모둠 프로젝트</p>
+        </div>
+
+        <!-- 사진 3 -->
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img class="auto-img" data-base="photo3" alt="결과 발표 활동 사진">
+          </div>
+          <p class="photo-caption">결과 발표</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         [섹션 3] 이런 학생에게 추천해요
+         ========================================================== -->
+    <section class="card">
+      <h2 class="section-title">🙋 이런 학생에게 추천해요</h2>
+      <ul class="info-list">
+        <li>자신의 철학과 인생의 목표를 어떻게 세워야 하는 지 궁금한 학생</li>
+        <li>직접 만들고 체험하는 활동을 좋아하는 학생</li>
+        <li>기술을 활용해 문제를 해결해보고 싶은 학생</li>
+      </ul>
+    </section>
+
+    <!-- ==========================================================
+         [섹션 4] 수강 전 알아두기
+         ========================================================== -->
+    <section class="card">
+      <h2 class="section-title">📌 수강 전 알아두기</h2>
+      <ul class="info-list">
+        <li>코딩을 처음 접하는 학생도 참여할 수 있습니다.</li>
+        <li>실습과 프로젝트 중심으로 수업합니다.</li>
+        <li>평가 방법은 수업 시작 시 안내합니다.</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      선택과목 안내 페이지 · 인문학과 윤리
+    </footer>
+
+  </div>
+
+  <!-- ==========================================================
+       [사진 확장자 자동 인식 스크립트]
+       같은 폴더의 jpg, jpeg, png(대소문자 포함) 파일을 순서대로 찾아 불러옵니다.
+       ========================================================== -->
+  <script>
+    document.querySelectorAll('.auto-img').forEach(function(img) {
+      const baseName = img.getAttribute('data-base');
+      const extensions = ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG'];
+      let index = 0;
+
+      function tryNextExtension() {
+        if (index < extensions.length) {
+          img.src = baseName + '.' + extensions[index];
+          index++;
+        } else {
+          // 사진 파일이 아직 폴더에 없을 때 안내 문구 표시
+          img.parentElement.innerHTML =
+            '<span style="color:#64748b; font-size:15px; padding:12px;">' +
+            baseName + ' 이미지 준비 중<br>(.jpg / .jpeg / .png)</span>';
+        }
+      }
+
+      img.onerror = tryNextExtension;
+      tryNextExtension();
+    });
+  </script>
+
+</body>
+</html>
